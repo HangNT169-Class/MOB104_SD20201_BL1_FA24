@@ -48,6 +48,16 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("1");
+//                    System.out.println("Moi nhap vi tri can xoa:");
+//                    int viTri = Integer.valueOf(sc.nextLine());
+//                    service.xoaTheoViTri(viTri);
+//                    System.out.println("Danh sach sau khi xoa:");
+//                    service.inDanhSachDienThoai();
+                    System.out.println("Moi nhap ma:");
+                    int ma = Integer.valueOf(sc.nextLine());
+                    service.xoaTheoMa(ma);
+                    System.out.println("Danh sach sau khi xoa:");
+                    service.inDanhSachDienThoai();
                     break;
                 case 0:
                     System.out.println("thoat");

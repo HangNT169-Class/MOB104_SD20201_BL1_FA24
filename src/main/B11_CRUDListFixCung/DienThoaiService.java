@@ -66,6 +66,35 @@ public class DienThoaiService {
             return o1.getGia() - o2.getGia();
         });
     }
-    
+
+    public void xoaTheoViTri(int viTri) {
+//        listDienThoai.remove(viTri);
+        listDienThoai.remove(viTri);
+    }
+
+    public void xoaTheoMa(int maCanXoa) {
+        // tim kiem tuan tu 
+//        for (int i = 0; i < listDienThoai.size(); i++) {
+//            // neu tim thay dien thoai trong ds co ma trung vs ma nhap vao
+//            if(listDienThoai.get(i).getMa() == maCanXoa){
+//                listDienThoai.remove(i);
+//                return;
+//            }
+//        }
+        // Java 8 -> lamda 
+        listDienThoai.removeIf(s -> s.getMa() == maCanXoa);
+    }
+    // tim kiem theo ma nhap tu ban phim
+    // search => filter cua lamda
+    public ArrayList<DienThoai>searchByCode(int ma){
+        ArrayList<DienThoai> listSearch = new ArrayList<>();
+        // Code 
+        for (DienThoai dienThoai : listDienThoai) {
+            if(dienThoai.getMa() == ma){
+                listSearch.add(dienThoai);
+            }
+        }
+        return listSearch;
+    }
 
 }
